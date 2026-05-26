@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - EdsonGlenderCode Systems</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand brand-title" href="index.html">
+                <strong>EdsonGlenderCode Systems</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu1.html">Sobre a Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu2.html">Entre em Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header-section-small">
+        <div class="header-overlay">
+            <h1 class="header-title">CADASTRO DE CLIENTE</h1>
+        </div>
+    </header>
+
+    <!-- Registration Form -->
+    <main class="container py-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-dark text-white">
+                        <h4 class="mb-0">Informações Pessoais</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="registrationForm">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="cpf" class="form-label">CPF</label>
+                                <input type="text" class="form-control" id="cpf" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Endereço</label>
+                                <input type="text" class="form-control" id="address" required>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="city" class="form-label">Cidade</label>
+                                    <input type="text" class="form-control" id="city" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="state" class="form-label">Estado</label>
+                                    <input type="text" class="form-control" id="state" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="zipcode" class="form-label">CEP</label>
+                                <input type="text" class="form-control" id="zipcode" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        Concordo com os Termos e Condições
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-warning btn-lg">
+                                    ✓ Concluir Cadastro
+                                </button>
+                                <a href="index.html" class="btn btn-secondary btn-lg">
+                                    Voltar para Catálogo
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container py-4">
+            <p class="text-center small text-muted mb-0">
+                &copy; 2026 EdsonGlenderCode Systems. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                cpf: document.getElementById('cpf').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                zipcode: document.getElementById('zipcode').value
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
